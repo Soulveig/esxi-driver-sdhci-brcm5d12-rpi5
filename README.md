@@ -14,7 +14,7 @@ Raspberry Pi 5 UEFI exposes the onboard microSD controller to ESXi as the ACPI d
 
 This package adapts VMware's existing `vmksdhci` driver family, which already contains Raspberry Pi 4-era `BCM2847` SDHCI support. It retains the original SDHCI implementation and adds the Raspberry Pi 5 `BRCM5D12` ACPI identifier and device mapping.
 
-This is not a new SDHCI implementation and it does not modify or include the separate RP1 network driver, `rp1sys.v00`.
+This is an adaptation of the existing SDHCI implementation rather than a new driver written from scratch.
 
 ### Compatibility
 
@@ -85,7 +85,7 @@ UEFI Raspberry Pi 5 передаёт встроенный контроллер m
 
 Этот пакет адаптирует существующее семейство драйверов VMware `vmksdhci`, в котором уже была поддержка SDHCI Raspberry Pi 4 (`BCM2847`). Исходная реализация SDHCI сохранена; добавлены ACPI-идентификатор Raspberry Pi 5 `BRCM5D12` и соответствующее сопоставление устройства.
 
-Это не новая реализация SDHCI с нуля. Пакет также не изменяет и не включает отдельный сетевой драйвер RP1 `rp1sys.v00`.
+Это адаптация существующей реализации SDHCI, а не новый драйвер, написанный с нуля.
 
 ### Совместимость
 
