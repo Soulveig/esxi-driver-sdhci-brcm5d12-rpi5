@@ -2,6 +2,8 @@
 
 Native VMware ESXi-Arm driver package for the Raspberry Pi 5 SD controller exposed as ACPI device `BRCM5D12`.
 
+**[English](#english) | [Русский](#русский) | [Releases](https://github.com/Soulveig/native-esxi-driver-brcm5d12-rpi5/releases)**
+
 ## English
 
 Target: ESXi-Arm 8.0U3c build 24449057. The VIB is unsigned and uses `CommunitySupported` acceptance; Secure Boot must be disabled. Install from maintenance mode and keep a rollback path and console access available.
