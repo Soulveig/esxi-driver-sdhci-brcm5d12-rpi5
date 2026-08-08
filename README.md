@@ -37,7 +37,7 @@ Download the standalone VIB or offline bundle from [Releases](https://github.com
 
 ```sh
 esxcli software vib install \
-  -v /vmfs/volumes/datastore1/vmksdhci-0.1.0-1-community.vib
+  -v /vmfs/volumes/datastore1/vmksdhci-1.0.0-1-community.vib
 ```
 
 Replace `datastore1` with the actual datastore name. Reboot is required because live installation and removal are intentionally disabled. Do not reboot until a known-good bootbank rollback and console access are available.
@@ -54,7 +54,7 @@ Expected result: the SD controller creates a storage adapter such as `vmhba64`, 
 
 ### Host validation
 
-The v0.1.0 payload was validated on a Raspberry Pi 5 host:
+The v1.0 payload was validated on a Raspberry Pi 5 host:
 
 - `BRCM5D12` attached to `vmksdhci` and created `vmhba64`;
 - a 64 GB SDHC card was detected as a native direct-access device;
@@ -68,7 +68,7 @@ Unsupported SCSI Inquiry/VPD pages may be logged because an SD card does not exp
 ### Known limitations
 
 - long-duration read/write stress has not yet been completed;
-- datastore persistence after an additional cold boot is not part of the v0.1.0 validation claim;
+- datastore persistence after an additional cold boot is not part of the v1.0 validation claim;
 - VPD identifiers, MMC lifetime data and some SCSI management commands are unsupported;
 - the package targets only the ESXi-Arm build shown above;
 - the VIB is unsigned and intended for controlled experimental use.
@@ -108,7 +108,7 @@ UEFI Raspberry Pi 5 передаёт встроенный контроллер m
 
 ```sh
 esxcli software vib install \
-  -v /vmfs/volumes/datastore1/vmksdhci-0.1.0-1-community.vib
+  -v /vmfs/volumes/datastore1/vmksdhci-1.0.0-1-community.vib
 ```
 
 Замените `datastore1` фактическим именем datastore. Требуется перезагрузка: live install и live remove намеренно запрещены. Не перезагружайте хост, пока не подготовлены проверенный rollback bootbank и доступ к физической консоли.
@@ -125,7 +125,7 @@ esxcli storage filesystem list
 
 ### Проверка на хосте
 
-Payload v0.1.0 проверен на Raspberry Pi 5:
+Payload v1.0 проверен на Raspberry Pi 5:
 
 - `BRCM5D12` подключился к `vmksdhci` и создал `vmhba64`;
 - SDHC-карта 64 ГБ определилась как нативное direct-access устройство;
@@ -139,7 +139,7 @@ Payload v0.1.0 проверен на Raspberry Pi 5:
 ### Известные ограничения
 
 - длительный нагрузочный тест чтения и записи пока не завершён;
-- повторное автоматическое монтирование datastore после дополнительного cold boot не входит в подтверждённый статус v0.1.0;
+- повторное автоматическое монтирование datastore после дополнительного cold boot не входит в подтверждённый статус v1.0;
 - VPD-идентификаторы, MMC lifetime data и часть управляющих команд SCSI не поддерживаются;
 - пакет предназначен только для указанной сборки ESXi-Arm;
 - VIB не подписан и предназначен для контролируемых экспериментов.
@@ -150,6 +150,6 @@ Payload v0.1.0 проверен на Raspberry Pi 5:
 
 ## Files / Файлы
 
-- `vmksdhci-0.1.0-1-community.vib` — standalone VIB;
-- `vmksdhci-0.1.0-1-offline-bundle.zip` — offline bundle;
+- `vmksdhci-1.0.0-1-community.vib` — standalone VIB;
+- `vmksdhci-1.0.0-1-offline-bundle.zip` — offline bundle;
 - `SHA256SUMS` — контрольные суммы SHA-256.

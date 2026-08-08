@@ -32,7 +32,7 @@ def main():
     os.makedirs(args.output_dir, exist_ok=True)
     payload_path = os.path.join(args.output_dir, "vmksdhci.vgz")
     vib_path = os.path.join(
-        args.output_dir, "vmksdhci-0.1.0-1-community.vib")
+        args.output_dir, "vmksdhci-1.0.0-1-community.vib")
 
     with open(args.vmtar, "rb") as source, open(payload_path, "wb") as raw:
         with EsxGzip.GzipFile(
@@ -42,7 +42,7 @@ def main():
 
     vib = Vib.ArFileVib(
         name="vmksdhci",
-        version=Version.VibVersion.fromstring("0.1.0-1"),
+        version=Version.VibVersion.fromstring("1.0.0-1"),
         vendor="Soulveig",
         summary="Native BRCM5D12 SDHCI driver for Raspberry Pi 5",
         description=(
@@ -78,12 +78,12 @@ def main():
         output.write("\n")
 
     bundle_path = os.path.join(
-        args.output_dir, "vmksdhci-0.1.0-1-offline-bundle.zip")
+        args.output_dir, "vmksdhci-1.0.0-1-offline-bundle.zip")
     if os.path.exists(bundle_path):
         os.unlink(bundle_path)
     # WriteOfflineBundle's metadata scan is non-recursive in this ESXi 8.0
     # esximage implementation, so keep the single VIB at the depot root.
-    vib.relativepath = "vmksdhci-0.1.0-1-community.vib"
+    vib.relativepath = "vmksdhci-1.0.0-1-community.vib"
     vib.remotelocations = [pathlib.Path(vib_path).resolve().as_uri()]
     OfflineBundle.WriteOfflineBundle(
         bundle_path,
