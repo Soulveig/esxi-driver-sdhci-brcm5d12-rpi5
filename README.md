@@ -6,6 +6,10 @@ Enable the Raspberry Pi 5 microSD controller as native storage in VMware ESXi-Ar
 
 > **Experimental CommunitySupported driver.** Secure Boot must be disabled. Keep physical-console access and a tested bootbank rollback available before installation.
 
+![Raspberry Pi 5 SD card detected by ESXi as a GPT-partitioned VMFS device](docs/images/esxi-rpi5-sd-vmfs6.png)
+
+*A 64 GB SDHC card exposed through `BRCM5D12`, detected as `vmhba64`, and formatted with a VMFS partition.*
+
 ## English
 
 ### What this project does
